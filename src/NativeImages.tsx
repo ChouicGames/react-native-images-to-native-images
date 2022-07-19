@@ -1,6 +1,6 @@
 import React from "react"
 import { Image, Platform } from "react-native"
-import { files } from "../lib/commonImage/Images"
+import { Files } from "../lib/commonImage/Types"
 import { AndroidFileType, NativeImageProps, File, IosFileType } from "./types"
 import VectorDrawable from "@klarna/react-native-vector-drawable"
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest }) => {
-  const fileInfos: File = files[file]
+  const fileInfos: File = Files[file]
   let width = undefined
   let height = undefined
 
