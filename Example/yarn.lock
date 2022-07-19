@@ -6160,7 +6160,7 @@ react-native-gradle-plugin@^0.0.7:
 
 "react-native-images-to-native-images@git+https://github.com/ChouicGames/react-native-images-to-native-images.git":
   version "1.0.0"
-  resolved "git+https://github.com/ChouicGames/react-native-images-to-native-images.git#c6e4c2bfa690378d3543cb32fe49753b83865731"
+  resolved "git+https://github.com/ChouicGames/react-native-images-to-native-images.git#a357bac6e82b4c0297f39082eef53042233e85d3"
   dependencies:
     chroma-js "^2.4.2"
     convert-svg-to-png "^0.6.4"
