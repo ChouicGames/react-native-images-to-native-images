@@ -2,3 +2,4 @@ node_modules
 .DS_Store*
 Example/ios/Pods
 Example/android/app/build
+Example/android/.gradle
