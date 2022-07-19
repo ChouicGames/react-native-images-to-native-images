@@ -6,15 +6,15 @@ const imageFolder = "./images/"
 
 if (!fs.existsSync(imageFolder)) {
   const constantsContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/constants.ts"
+    "./node_modules/react-native-images-to-native-images/script/commonImage/Images.ts"
   )
   const typesContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/types.ts"
+    "./node_modules/react-native-images-to-native-images/script/commonImage/Types.ts"
   )
   folderExist(imageFolder)
   const err = () => {}
-  fs.writeFile("images/constants.ts", constantsContent, err)
-  fs.writeFile("images/types.ts", typesContent, err)
+  fs.writeFile("images/Images.ts", constantsContent, err)
+  fs.writeFile("images/Types.ts", typesContent, err)
 
   shell.exec(
     "cp ./node_modules/react-native-images-to-native-images/src/images_example/img0.jpg ./images/"
