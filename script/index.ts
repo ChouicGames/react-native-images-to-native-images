@@ -7,7 +7,7 @@ export const index = () => {
     shell.exec(
       "tsc ./images/Images.ts --outDir ./node_modules/react-native-images-to-native-images/lib/commonImage/"
     )
-    var constantsFile = require("./commonImage/constants")
+    var constantsFile = require("./commonImage/Images")
     imagesGenerator(constantsFile["files"], constantsFile["appName"])
   } else {
     console.log("CANNOT START")
