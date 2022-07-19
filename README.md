@@ -2,10 +2,10 @@
 
 ## Introduction
 
-This react-native module will help you to convert your images to Png/Jpg/VectorDrawable (for Android)/Pdf (for iOS) in every scales.
+This react-native module will help you to convert your images to Png/Jpg/VectorDrawable (for Android)/Pdf (for iOS) in every scale.
 
 Your images must be in svg type if you want to convert them in Png/VectorDrawable/Pdf.
-If you want to convert in Jpg, your images must be an Jpg (This module will just resize your image for every scales)
+If you want to convert in Jpg, your images must be a Jpg (this module will just resize your image for every scale)
 
 To show Vectors Drawables, the module need : @klarna/react-native-vector-drawable in your project dependencies, that's why we will ask you to install with our module.
 
@@ -28,13 +28,13 @@ yarn generate-images-init
 ```
 # ![image](https://github.com/ChouicGames/react-native-images-to-native-images/blob/main/ReadMe_Images/ImagesFolder_screenshot.png?raw=true)
 
-This will create a new folder 'images' in your root projet, which contains 'constants.ts', 'types.ts' and 5 images, that serve as an example (you can delete them if you don't want the module to convert them into your project images).
+This will create a new folder 'images' in your root project, which contains 'constants.ts', 'types.ts' and 5 images, that serve as an example (you can delete them if you don't want the module to convert them into your project images).
 
-## Set-up
+## Set up
 
 You can look [Example/](https://github.com/ChouicGames/react-native-images-to-native-images/tree/main/Example) to try the set-up and usage example.
 
-Open images/constants.ts and change the value of the const "appName" to your app name (We need the name of the folder in ```YourProject/ios/YourAppName```)
+Open images/constants.ts and change the value of the const "appName" to your app name (we need the name of the folder in ```YourProject/ios/YourAppName```)
 
 ```js
 export const appName: string = "YourAppName" // <------ change to your app name (in YourProject/ios/YourAppName)
@@ -43,16 +43,16 @@ export const appName: string = "YourAppName" // <------ change to your app name 
 Now you can import your Svg/Jpg images in the folder 'images'.
 
 **WARNING : 
-Your images name must be in lower case, without spaces, and without '-'. Only "_" are accepted. You can add numbers.**
+Your images names must be in lower case, without spaces, and without '-'. Only "_" are accepted. You can add numbers.**
 
 **For example, this name is right : 'my_super_image.svg'
 But this name isn't right : 'My-Super image.svg'**
 
-**If you want to convert in Jpg, your images must be an Jpg (This module will just resize your image for every scales**
+**If you want to convert in Jpg, your images must be a Jpg (This module will just resize your image for every scale**
 
 
 
-For every images in the folder, you have to add the name in 'types.ts' > enum Files. You can replace the default values of default images.
+For every image in the folder, you have to add the name of 'types.ts' > enum Files. You can replace the default values of default images.
 
 ```js
 export enum Files {
@@ -68,8 +68,8 @@ export enum Files {
 }
 ```
 
-Then, in 'constants.ts' >  FilesInfos, add a your images informations, by first adding the key of your images : [Files.nameYouAddInTypes.ts] : {},
-Then adding the differents informations needed :
+Then, in 'constants.ts' >  FilesInfos, add your images informations, by first adding the key of your images : [Files.nameYouAddInTypes.ts] : {},
+then adding the differents informations needed :
 * path : "./images/image_name.svg"
 * source : {uri: "image_name"}
 * android {type: AndroidFileType.(Jpg/Png/Vector), width & height if it's Png or Jpg}
@@ -121,7 +121,7 @@ You can now run :
 yarn generate-images
 ```
 
-And the module will convert all your images in the right type, in every scales !
+And the module will convert all your images in the right type, in every scale !
 
 ## Usage
 
@@ -161,7 +161,7 @@ export default App;
 
 ```
 
-In this example, IMG1 is an Vector Drawable, which don't support border props, more informations for Vector Drawable here : https://github.com/klarna-incubator/react-native-vector-drawable
+In this example, IMG1 is a Vector Drawable, which doesn't support border props, more informations for Vector Drawable here : https://github.com/klarna-incubator/react-native-vector-drawable
 
 ### Props
 
