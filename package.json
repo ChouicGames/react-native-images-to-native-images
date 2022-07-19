@@ -27,7 +27,7 @@
     "svg-to-pdfkit": "^0.1.8",
     "svg2vectordrawable": "^2.9.1",
     "vd-tool": "^4.0.2",
-    "typescript" : "4.7.4",
+    "typescript" : "^4.7.4",
     "shelljs": "^0.8.5"
   },
   "peerDependencies": {
