@@ -1,6 +1,6 @@
 import React from "react"
 import { Image, Platform } from "react-native"
-import { files } from "../lib/commonImage/constants"
+import { files } from "../lib/commonImage/Images"
 import { AndroidFileType, NativeImageProps, File, IosFileType } from "./types"
 import VectorDrawable from "@klarna/react-native-vector-drawable"
 
