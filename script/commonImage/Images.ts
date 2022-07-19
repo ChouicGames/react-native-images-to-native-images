@@ -1,9 +1,9 @@
 import { AndroidFileType, IosFileType } from "react-native-images-to-native-images/src/types"
-import { Files, FilesInfos } from "./types"
+import { Files, FilesInfos } from "./Types"
 
 export const appName: string = "YourAppName" // <------ change to your app name (in YourProject/ios/YourAppName)
 
-export const files: FilesInfos = {
+const Images: FilesInfos = {
   //YOUR IMAGES HERE !
 
   // Follow this example :
@@ -45,3 +45,5 @@ export const files: FilesInfos = {
     ios: { type: IosFileType.Pdf },
   },
 }
+
+export default Images
