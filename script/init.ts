@@ -9,7 +9,7 @@ if (!fs.existsSync(imageFolder)) {
     "./node_modules/react-native-images-to-native-images/script/commonImage/Images.ts"
   )
   const typesContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/Types.ts"
+    "./node_modules/react-native-images-to-native-images/script/commonImage/ImagesTypes.ts"
   )
   folderExist(imageFolder)
   const err = () => {}
