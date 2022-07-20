@@ -32,3 +32,5 @@ export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest 
 
   return <Image source={fileInfos.source} style={{ width, height }} {...rest} />
 }
+
+export default NativeImage
