@@ -1,4 +1,4 @@
-import { FilesInfos } from "./commonImage/Types"
+import { FilesInfos } from "./commonImage/ImagesTypes"
 import { AndroidFileType, File, IosFileType } from "../src/types"
 import { folderExist } from "./baseCode/common.js"
 import { convertSvgToPdf } from "./convertToPdf/convertSvgToPdf"

@@ -14,7 +14,7 @@ if (!fs.existsSync(imageFolder)) {
   folderExist(imageFolder)
   const err = () => {}
   fs.writeFile("images/Images.ts", constantsContent, err)
-  fs.writeFile("images/ImageTypes.ts", typesContent, err)
+  fs.writeFile("images/ImagesTypes.ts", typesContent, err)
 
   shell.exec(
     "cp ./node_modules/react-native-images-to-native-images/src/images_example/img0.jpg ./images/"
