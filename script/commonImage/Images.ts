@@ -3,7 +3,7 @@ import { Files, FilesInfos } from "./Types"
 
 export const appName: string = "YourAppName" // <------ change to your app name (in YourProject/ios/YourAppName)
 
-const Images: FilesInfos = {
+export const Images: FilesInfos = {
   //YOUR IMAGES HERE !
 
   // Follow this example :
