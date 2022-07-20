@@ -47,3 +47,5 @@ export const Images: FilesInfos = {
 }
 
 export default Images
+
+export { Files }

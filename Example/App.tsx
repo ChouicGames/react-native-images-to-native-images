@@ -2,8 +2,7 @@ import React from "react"
 import { ScrollView, View } from "react-native"
 
 import { NativeImage } from "react-native-images-to-native-images"
-import Images from "./images/Images"
-import { Files } from "./images/ImagesTypes"
+import Images, { Files } from "./images/Images"
 
 const App = () => {
   const imagesSize = {
