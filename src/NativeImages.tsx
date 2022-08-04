@@ -9,27 +9,25 @@ interface Props {
 
 const getWidthAndHeight = (fileInfos: File) => {
   if (
-      Platform.OS === "android" &&
-      (fileInfos.android.type === AndroidFileType.Jpeg ||
-          fileInfos.android.type === AndroidFileType.Png)
+    Platform.OS === "android" &&
+    (fileInfos.android.type === AndroidFileType.Jpeg ||
+      fileInfos.android.type === AndroidFileType.Png)
   ) {
-    return {width: fileInfos.android.width, height: fileInfos.android.height}
+    return { width: fileInfos.android.width, height: fileInfos.android.height }
   } else if (fileInfos.ios.type === IosFileType.Jpeg || fileInfos.ios.type === IosFileType.Png) {
-    return {width: fileInfos.ios.width, height: fileInfos.ios.height}
+    return { width: fileInfos.ios.width, height: fileInfos.ios.height }
   }
-  return {width: undefined, height: undefined}
+  return { width: undefined, height: undefined }
 }
 
 export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest }) => {
   const fileInfos: File = file
 
   if (Platform.OS === "android" && fileInfos.android.type === AndroidFileType.Vector) {
-    return (
-      <VectorDrawable resourceName={fileInfos.source["uri"]} {...rest} />
-    )
+    return <VectorDrawable resourceName={fileInfos.source["uri"]} {...rest} />
   }
 
-  const {width, height} = getWidthAndHeight(fileInfos)
+  const { width, height } = getWidthAndHeight(fileInfos)
   return <Image source={fileInfos.source} style={{ width, height }} {...rest} />
 }
 
