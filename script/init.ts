@@ -33,4 +33,6 @@ if (!fs.existsSync(imageFolder)) {
   )
 
   console.log("Images folder has been created successfully !")
+} else {
+  console.log(":exclamation: INIT FAILED : a folder 'images' is already in your project root...  ")
 }
