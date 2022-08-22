@@ -89,29 +89,17 @@ export const convertToPngOrJpgIos = async (
     type
   )
   if (heightIPad && widthIPad) {
-    const contentsImageIpad = pathIpad
-      ? await generateForEveryScale(
-          pathIpad,
-          widthIPad,
-          heightIPad,
-          fileName,
-          outputFile,
-          folderName,
-          fileType,
-          type,
-          true
-        )
-      : await generateForEveryScale(
-          inputFilePath,
-          widthIPad,
-          heightIPad,
-          fileName,
-          outputFile,
-          folderName,
-          fileType,
-          type,
-          true
-        )
+    const contentsImageIpad = await generateForEveryScale(
+      pathIpad != undefined ? pathIpad : inputFilePath,
+      widthIPad,
+      heightIPad,
+      fileName,
+      outputFile,
+      folderName,
+      fileType,
+      type,
+      true
+    )
 
     for (let i = 0; i < contentsImageIpad.length; i++) {
       contentsImage.push(contentsImageIpad[i])

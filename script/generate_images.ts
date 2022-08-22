@@ -34,7 +34,9 @@ const generateIos = async (file: File, appName: string, realPath: string) => {
 
   folderExist(iosOutput)
   if (file.ios.type === IosFileType.Png || file.ios.type === IosFileType.Jpeg) {
-    const realPathIpad = "./images/" + file.ios.pathIpad?.replace("./", "")
+    const realPathIpad = file.ios.pathIpad
+      ? "./images/" + file.ios.pathIpad.replace("./", "")
+      : undefined
     await convertToPngOrJpgIos(
       realPath,
       file.ios.height,
