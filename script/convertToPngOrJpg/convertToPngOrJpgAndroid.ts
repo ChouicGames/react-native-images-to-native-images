@@ -6,7 +6,7 @@ import * as readline from "readline"
 const generateForEveryScale = async (
   inputPath: string,
   width: number,
-  height: number,
+  height: number | "auto",
   fileName: string,
   outputFile: string,
   fileType: AndroidFileType,
@@ -48,7 +48,7 @@ const generateForEveryScale = async (
 
 export const convertToPngOrJpgAndroid = async (
   path: string,
-  height: number,
+  height: number | "auto",
   width: number,
   outputFile: string,
   fileType: AndroidFileType,

@@ -44,7 +44,7 @@ export const AndroidImageSize: AndroidImageSizes = {
 
 export const convertPng = async (
   inputPath: string,
-  height: number,
+  height: number | "auto",
   width: number,
   outputFile: string,
   scale: number
@@ -59,7 +59,7 @@ export const convertPng = async (
 
 export const convertJpg = async (
   inputPath: string,
-  height: number,
+  height: number | "auto",
   width: number,
   outputFile: string,
   scale: number

@@ -31,8 +31,10 @@ const generateAndroid = async (file: File, realPath: string) => {
 
 const generateIos = async (file: File, appName: string, realPath: string) => {
   const iosOutput = "./ios/" + appName + "/Images.xcassets/"
+
   folderExist(iosOutput)
   if (file.ios.type === IosFileType.Png || file.ios.type === IosFileType.Jpeg) {
+    const realPathIpad = "./images/" + file.ios.pathIpad?.replace("./", "")
     await convertToPngOrJpgIos(
       realPath,
       file.ios.height,
@@ -41,7 +43,8 @@ const generateIos = async (file: File, appName: string, realPath: string) => {
       file.ios.type,
       file.source["uri"],
       file.ios.heightIPad,
-      file.ios.widthIPad
+      file.ios.widthIPad,
+      realPathIpad
     )
   } else if (file.ios.type === IosFileType.Pdf) {
     await convertSvgToPdf(realPath, iosOutput, file.source["uri"])

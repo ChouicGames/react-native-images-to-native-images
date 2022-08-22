@@ -29,6 +29,7 @@ type IosFile =
       height: number | "auto"
       widthIPad?: number
       heightIPad?: number | "auto"
+      pathIpad?: string
     }
   | {
       type: IosFileType.Pdf
