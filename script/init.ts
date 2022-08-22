@@ -32,7 +32,7 @@ if (!fs.existsSync(imageFolder)) {
     "cp ./node_modules/react-native-images-to-native-images/src/images_example/img4.svg ./images/"
   )
 
-  console.log("Images folder has been created successfully !")
+  console.log("✅ Images folder has been created successfully !")
 } else {
   console.log("❗️ INIT FAILED : a folder 'images' is already in your project root...  ")
 }
