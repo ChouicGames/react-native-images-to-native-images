@@ -14,7 +14,7 @@ To show Vectors Drawables, the module need : @klarna/react-native-vector-drawabl
 run this command with yarn :
 
 ```sh
-yarn add git+https://github.com/ChouicGames/react-native-images-to-native-images.git @klarna/react-native-vector-drawable
+yarn add @chouicgames/react-native-images-to-native-images @klarna/react-native-vector-drawable
 ```
 
 #### init the images folder
