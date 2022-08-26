@@ -1,4 +1,7 @@
-import { AndroidFileType, IosFileType } from "react-native-images-to-native-images/src/types"
+import {
+  AndroidFileType,
+  IosFileType,
+} from "@chouicgames/react-native-images-to-native-images/src/types"
 import { Files, FilesInfos } from "./ImagesTypes"
 
 export const appName: string = "YourAppName" // <------ change to your app name (in YourProject/ios/YourAppName)

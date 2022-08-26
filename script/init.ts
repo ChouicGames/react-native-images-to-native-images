@@ -6,10 +6,10 @@ const imageFolder = "./images/"
 
 if (!fs.existsSync(imageFolder)) {
   const constantsContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/Images.ts"
+    "./node_modules/@chouicgames/react-native-images-to-native-images/script/commonImage/Images.ts"
   )
   const typesContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/ImagesTypes.ts"
+    "./node_modules/@chouicgames/react-native-images-to-native-images/script/commonImage/ImagesTypes.ts"
   )
   folderExist(imageFolder)
   const err = () => {}
