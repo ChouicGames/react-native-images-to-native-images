@@ -150,7 +150,7 @@ And the module will convert all your images in the right type, in every scale !
 import React from "react"
 import { ScrollView, View } from "react-native"
 
-import { NativeImage } from "react-native-images-to-native-images"
+import { NativeImage } from "@chouicgames/react-native-images-to-native-images"
 import Images, { Files } from "./images/Images"
 
 const App = () => {
@@ -195,7 +195,7 @@ In this example, IMG1 is a Vector Drawable, which doesn't support border props. 
 You can also use AnimatedNativeImage, it work exactly like Animated.Image.
 
 ```js
-import AnimatedNativeImages from "react-native-images-to-native-images/src/AnimatedNativeImage"
+import AnimatedNativeImages from "@chouicgames/react-native-images-to-native-images/src/AnimatedNativeImage"
 
 <AnimatedNativeImages file={Images[Files.IMG4]} style={styles.image} />
 ```
