@@ -1,0 +1,68 @@
+#!/bin/bash
+
+local_oxi="$(type -p oxipng)"
+local_cjpeg="$(type -p cjpeg)"
+
+finish_compress=0
+not_finish_compress=0
+total=0
+folders_ios="$(find . -name Images.xcassets)"
+ios_images=""
+
+yarn generate-images
+
+if [ "$local_oxi" = "" ]
+then
+    brew reinstall oxipng
+fi
+
+if [ "$local_cjpeg" = "" ]
+then
+    brew reinstall mozjpeg
+fi
+
+# trouver le dossier où sont les images dans ios
+for folder in $folders_ios
+do
+    if [[ $folder == ./ios* ]]
+    then
+        ios_images=$folder
+    fi
+done
+
+echo "Starting compressing..."
+
+tab_png=$(find android/app/src/main/res -name '*.png' && find $ios_images -name '*.png')
+for png_file in $tab_png
+do
+    oxipng -q -o 3 $png_file
+    if [ $? = 0 ]
+    then
+        finish_compress=$(($finish_compress + 1))
+    else
+        not_finish_compress=$(($not_finish_compress + 1))
+    fi
+    total=$(($total + 1))
+done
+
+tab_jpg=$(find android/app/src/main/res -name '*.jpg' && find $ios_images -name '*.jpg')
+for jpg_file in $tab_jpg
+do
+    cjpeg $jpg_file > image.jpg
+    if [ $? = 0 ]
+    then
+        mv image.jpg $jpg_file
+        finish_compress=$(($finish_compress + 1))
+    else
+        not_finish_compress=$(($not_finish_compress + 1))
+    fi
+    total=$(($total + 1))
+done
+
+if [ $not_finish_compress = 0 ]
+then
+    echo "✅ $finish_compress files have been compressed"
+else
+    echo "❌ $not_finish_compress files have not been compressed in a total of $total files"
+fi
+    

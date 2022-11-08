@@ -5,7 +5,8 @@
   "main": "./src/NativeImages.tsx",
   "bin": {
     "generate-images": "bin/generate-images",
-    "generate-images-init": "bin/generate-images-init"
+    "generate-images-init": "bin/generate-images-init",
+    "generate-images-optimised": "bin/generate-images-optimised"
   },
   "files": [
     "lib",
