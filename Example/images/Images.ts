@@ -29,7 +29,7 @@ export const Images: FilesInfos = {
   [Files.IMG3]: {
     path: "./img3.svg",
     source: { uri: "img3" },
-    android: { type: AndroidFileType.Png, width: 450, height: 450 },
+    android: { type: AndroidFileType.Png, width: 450, height: "auto" },
     ios: {
       type: IosFileType.Png,
       width: 375,
@@ -42,7 +42,14 @@ export const Images: FilesInfos = {
     path: "./img4.svg",
     source: { uri: "img4" },
     android: { type: AndroidFileType.Png, width: 375, height: 375 },
-    ios: { type: IosFileType.Pdf },
+    ios: {
+      type: IosFileType.Png,
+      width: 375,
+      height: 375,
+      widthIPad: 400,
+      heightIPad: "auto",
+      pathIpad: "./img3.svg",
+    },
   },
 }
 

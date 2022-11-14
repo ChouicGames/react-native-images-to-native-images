@@ -6,10 +6,10 @@ const imageFolder = "./images/"
 
 if (!fs.existsSync(imageFolder)) {
   const constantsContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/Images.ts"
+    "./node_modules/@chouicgames/react-native-images-to-native-images/script/commonImage/Images.ts"
   )
   const typesContent = fs.readFileSync(
-    "./node_modules/react-native-images-to-native-images/script/commonImage/ImagesTypes.ts"
+    "./node_modules/@chouicgames/react-native-images-to-native-images/script/commonImage/ImagesTypes.ts"
   )
   folderExist(imageFolder)
   const err = () => {}
@@ -32,5 +32,7 @@ if (!fs.existsSync(imageFolder)) {
     "cp ./node_modules/react-native-images-to-native-images/src/images_example/img4.svg ./images/"
   )
 
-  console.log("Images folder has been created successfully !")
+  console.log("✅ Images folder has been created successfully !")
+} else {
+  console.log("❗️ INIT FAILED : a folder 'images' is already in your project root...  ")
 }

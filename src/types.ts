@@ -16,7 +16,7 @@ type AndroidFile =
   | {
       type: AndroidFileType.Jpeg | AndroidFileType.Png
       width: number
-      height: number
+      height: number | "auto"
     }
   | {
       type: AndroidFileType.Vector
@@ -26,9 +26,10 @@ type IosFile =
   | {
       type: IosFileType.Jpeg | IosFileType.Png
       width: number
-      height: number
+      height: number | "auto"
       widthIPad?: number
-      heightIPad?: number
+      heightIPad?: number | "auto"
+      pathIpad?: string
     }
   | {
       type: IosFileType.Pdf

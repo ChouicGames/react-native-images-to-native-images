@@ -8,7 +8,7 @@ import * as readline from "readline"
 const generateForEveryScale = async (
   inputPath: string,
   width: number,
-  height: number,
+  height: number | "auto",
   fileName: string,
   outputFile: string,
   folderName: string,
@@ -61,13 +61,14 @@ const generateForEveryScale = async (
 
 export const convertToPngOrJpgIos = async (
   path: string,
-  height: number,
+  height: number | "auto",
   width: number,
   outputFile: string,
   fileType: IosFileType,
   fileUri: string,
-  heightIPad?: number,
-  widthIPad?: number
+  heightIPad?: number | "auto",
+  widthIPad?: number,
+  pathIpad?: string
 ) => {
   const type = fileType == IosFileType.Png ? "png" : "jpg"
   const parentType = fileType === IosFileType.Png ? "svg" : "jpg"
@@ -89,7 +90,7 @@ export const convertToPngOrJpgIos = async (
   )
   if (heightIPad && widthIPad) {
     const contentsImageIpad = await generateForEveryScale(
-      inputFilePath,
+      pathIpad != undefined ? pathIpad : inputFilePath,
       widthIPad,
       heightIPad,
       fileName,
@@ -99,6 +100,7 @@ export const convertToPngOrJpgIos = async (
       type,
       true
     )
+
     for (let i = 0; i < contentsImageIpad.length; i++) {
       contentsImage.push(contentsImageIpad[i])
     }
