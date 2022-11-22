@@ -1,6 +1,6 @@
 {
   "name": "@chouicgames/react-native-images-to-native-images",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Convert svg file to png/jpg/pdf/vector drawable",
   "main": "./src/NativeImages.tsx",
   "bin": {
