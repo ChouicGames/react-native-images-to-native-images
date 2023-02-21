@@ -1,5 +1,5 @@
-import { ImageProps, ImageSourcePropType } from "react-native"
-
+import { ImageURISource } from "react-native"
+import { VectorDrawableProps, VectorDrawableStyle } from "@klarna/react-native-vector-drawable"
 export enum AndroidFileType {
   Vector,
   Jpeg,
@@ -37,9 +37,11 @@ type IosFile =
 
 export type File = {
   path: string
-  source: ImageSourcePropType
+  source: ImageURISource
   android: AndroidFile
   ios: IosFile
 }
 
-export type NativeImageProps = Omit<ImageProps, "source">
+export type NativeImageProps = Omit<VectorDrawableProps, "source" | "style"> | {
+  style: Omit<VectorDrawableStyle, "overflow" | "scroll"> 
+}

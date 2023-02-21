@@ -1,6 +1,6 @@
 import React from "react"
-import { Image, Platform, Animated } from "react-native"
-import { AndroidFileType, NativeImageProps, File, IosFileType } from "./types"
+import { Platform, Animated } from "react-native"
+import { AndroidFileType, NativeImageProps, File } from "./types"
 import VectorDrawable from "@klarna/react-native-vector-drawable"
 import { getWidthAndHeight } from "./NativeImages"
 
@@ -14,7 +14,7 @@ export const AnimatedNativeImage: React.FC<Props & NativeImageProps> = ({ file, 
   const fileInfos: File = file
 
   if (Platform.OS === "android" && fileInfos.android.type === AndroidFileType.Vector) {
-    return <AnimatedVectorDrawable resourceName={fileInfos.source["uri"]} {...rest} />
+    return <AnimatedVectorDrawable resourceName={fileInfos.source["uri"] as string} {...rest} />
   }
 
   const { width, height } = getWidthAndHeight(fileInfos)

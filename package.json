@@ -20,28 +20,29 @@
     "start": "npm run build"
   },
   "dependencies": {
-    "prettier": "^2.5.0",
+    "chroma-js": "^2.4.2",
     "convert-svg-to-png": "^0.6.4",
     "pdfkit": "^0.13.0",
-    "tempy": "^3.0.0",
-    "chroma-js": "^2.4.2",
+    "prettier": "^2.5.0",
     "sharp": "^0.30.7",
+    "shelljs": "^0.8.5",
     "stream": "^0.0.2",
     "svg-to-pdfkit": "^0.1.8",
     "svg2vectordrawable": "^2.9.1",
-    "vd-tool": "^4.0.2",
+    "tempy": "^3.0.0",
     "typescript": "^4.7.4",
-    "shelljs": "^0.8.5"
+    "vd-tool": "^4.0.2"
   },
   "peerDependencies": {
-    "@klarna/react-native-vector-drawable": "^0.3.0"
+    "@klarna/react-native-vector-drawable": "^0.3.0",
+    "react": "^18.2.0",
+    "react-native": "^0.71.3"
   },
   "author": "CHOUIC",
   "license": "MIT",
   "directories": {
     "lib": "lib"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChouicGames/react-native-images-to-native-images.git"
@@ -49,5 +50,11 @@
   "bugs": {
     "url": "https://github.com/ChouicGames/react-native-images-to-native-images/issues"
   },
-  "homepage": "https://github.com/ChouicGames/react-native-images-to-native-images#readme"
+  "homepage": "https://github.com/ChouicGames/react-native-images-to-native-images#readme",
+  "devDependencies": {
+    "@klarna/react-native-vector-drawable": "^0.4.0",
+    "@types/react": "^18.0.28",
+    "react": "^18.2.0",
+    "react-native": "^0.71.3"
+  }
 }
