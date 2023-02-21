@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "lib": ["ES6", "ES2015", "ESNEXT", "dom"],
+      "outDir": "build",
+      "rootDir": "./src",
+      "noEmit": true, /* Do not emit outputs. */
+      "allowJs": true,
+      "jsx": "react",
+      "importHelpers": true,
+      "esModuleInterop": true,
+      "declaration": false,
+      "module": "commonjs",
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "skipLibCheck": true
+    },
+    "exclude": [
+      "lib",
+      "Example",
+      "script"
+    ],
+    "include": ["src"]
+  }

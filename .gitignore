@@ -3,3 +3,4 @@ node_modules
 Example/ios/Pods
 Example/android/app/build
 Example/android/.gradle
+build

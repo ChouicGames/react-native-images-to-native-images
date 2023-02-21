@@ -20,11 +20,11 @@ const getWidthAndHeight = (fileInfos: File) => {
   return { width: undefined, height: undefined }
 }
 
-export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest }) => {
+export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest }: Props & NativeImageProps) => {
   const fileInfos: File = file
 
   if (Platform.OS === "android" && fileInfos.android.type === AndroidFileType.Vector) {
-    return <VectorDrawable resourceName={fileInfos.source["uri"]} {...rest} />
+    return <VectorDrawable resourceName={fileInfos.source["uri"] as string} {...rest} />
   }
 
   const { width, height } = getWidthAndHeight(fileInfos)

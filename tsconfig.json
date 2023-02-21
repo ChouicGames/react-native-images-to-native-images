@@ -16,6 +16,7 @@
       "node_modules",
       "lib",
       "test",
+      "Example",
       "src"
     ]
   }
