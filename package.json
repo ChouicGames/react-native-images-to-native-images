@@ -17,6 +17,7 @@
   "keywords": [],
   "scripts": {
     "build": "tsc -p .",
+    "build:react-native": "yarn tsc -p tsconfig.src.json",
     "start": "npm run build"
   },
   "dependencies": {

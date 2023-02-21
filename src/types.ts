@@ -1,5 +1,5 @@
-import { ImageURISource } from "react-native"
-import { VectorDrawableProps, VectorDrawableStyle } from "@klarna/react-native-vector-drawable"
+import { VectorDrawableResizeMode } from "@klarna/react-native-vector-drawable"
+import { ImageProps, ImageStyle, ImageURISource } from "react-native"
 export enum AndroidFileType {
   Vector,
   Jpeg,
@@ -42,6 +42,6 @@ export type File = {
   ios: IosFile
 }
 
-export type NativeImageProps = Omit<VectorDrawableProps, "source" | "style"> | {
-  style: Omit<VectorDrawableStyle, "overflow" | "scroll"> 
+export type NativeImageProps = Omit<ImageProps, "source" | "style"> | {
+  style: (Omit<ImageStyle, "overflow" | "scroll" | "resizeMode"> | { resizeMode?: VectorDrawableResizeMode }) | (Omit<ImageStyle, "overflow" | "scroll" | "resizeMode"> | { resizeMode?: VectorDrawableResizeMode })[]
 }

@@ -1,0 +1,19 @@
+name: CI
+on: [pull_request]
+
+jobs:
+  react-native:
+    runs-on: ubuntu-22.04
+    name: React native check
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - uses: actions/cache@v2
+        with:
+          path: 'node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
+      - run: yarn build:react-native
