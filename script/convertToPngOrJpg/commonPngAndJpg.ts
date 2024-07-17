@@ -49,12 +49,7 @@ export const convertPng = async (
   outputFile: string,
   scale: number
 ) => {
-  await convertFile(inputPath, {
-    height: height,
-    width: width,
-    outputFilePath: outputFile,
-    scale: scale,
-  })
+  await sharp(inputPath).resize({ height: height, width: width }).toFile(outputFile)
 }
 
 export const convertJpg = async (
