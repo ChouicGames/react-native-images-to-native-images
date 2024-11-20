@@ -1,6 +1,7 @@
+// @ts-ignore
 import {
   AndroidFileType,
-  IosFileType,
+  IosFileType, // @ts-ignore
 } from "@chouicgames/react-native-images-to-native-images/src/types"
 import { Files, FilesInfos } from "./ImagesTypes"
 

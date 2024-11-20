@@ -1,4 +1,5 @@
 import { FilesInfos } from "./commonImage/ImagesTypes"
+// @ts-ignore
 import { AndroidFileType, File, IosFileType } from "../src/types"
 import { folderExist } from "./baseCode/common.js"
 import { convertSvgToPdf } from "./convertToPdf/convertSvgToPdf"
@@ -54,8 +55,9 @@ const generateIos = async (file: File, appName: string, realPath: string) => {
 }
 
 export const imagesGenerator = async (file: FilesInfos, appName: string) => {
-  for (let image: File in file) {
-    await generateImages(file[image], appName)
+  for (let key in file) {
+    const image = file[key] as File
+    await generateImages(image, appName)
   }
 }
 

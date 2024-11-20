@@ -49,7 +49,11 @@ export const convertPng = async (
   outputFile: string,
   scale: number
 ) => {
-  await sharp(inputPath).resize({ height: height, width: width }).toFile(outputFile)
+  const size =
+    height == "auto"
+      ? { width: Math.floor(width * scale) }
+      : { height: Math.floor(height * scale), width: Math.floor(width * scale) }
+  await sharp(inputPath).resize(size).toFile(outputFile)
 }
 
 export const convertJpg = async (
@@ -59,7 +63,7 @@ export const convertJpg = async (
   outputFile: string,
   scale: number
 ) => {
-  await sharp(inputPath).resize({ height: height, width: width }).toFile(outputFile)
+  convertPng(inputPath, height, width, outputFile, scale)
 }
 
 export default convertPng

@@ -18,18 +18,18 @@ const generateForEveryScale = async (
     if (fileType === AndroidFileType.Png) {
       await convertPng(
         inputPath,
-        Math.floor(height * scale),
-        Math.floor(width * scale),
+        height,
+        width,
         getOutpoutFilePath(outputFile + AndroidImageSize[key].path, fileName),
-        1
+        scale
       )
     } else if (fileType === AndroidFileType.Jpeg) {
       await convertJpg(
         inputPath,
-        Math.floor(height * scale),
-        Math.floor(width * scale),
+        height,
+        width,
         getOutpoutFilePath(outputFile + AndroidImageSize[key].path, fileName),
-        1
+        scale
       )
     }
     readline.cursorTo(process.stdout, 0)
