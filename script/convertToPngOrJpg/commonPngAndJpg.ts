@@ -63,7 +63,7 @@ export const convertJpg = async (
   outputFile: string,
   scale: number
 ) => {
-  convertPng(inputPath, height, width, outputFile, scale)
+  await convertPng(inputPath, height, width, outputFile, scale)
 }
 
 export default convertPng
