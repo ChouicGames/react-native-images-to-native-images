@@ -9,15 +9,15 @@ import { convertSvgToVD } from "./convertToVD/convertToVD"
 
 const generateImages = async (file: File, appName: string) => {
   const realPath = "./images/" + file.path.replace("./", "")
-  await generateAndroid(file, realPath)
-  await generateIos(file, appName, realPath)
+  generateAndroid(file, realPath)
+  generateIos(file, appName, realPath)
 }
 
 const generateAndroid = async (file: File, realPath: string) => {
   const androidOutput = "./android/app/src/main/res/"
   folderExist(androidOutput)
   if (file.android.type === AndroidFileType.Png || file.android.type === AndroidFileType.Jpeg) {
-    await convertToPngOrJpgAndroid(
+    convertToPngOrJpgAndroid(
       realPath,
       file.android.height,
       file.android.width,
@@ -26,7 +26,7 @@ const generateAndroid = async (file: File, realPath: string) => {
       file.source["uri"]
     )
   } else if (file.android.type === AndroidFileType.Vector) {
-    await convertSvgToVD(realPath, androidOutput, file.source["uri"])
+    convertSvgToVD(realPath, androidOutput, file.source["uri"])
   }
 }
 
@@ -38,7 +38,7 @@ const generateIos = async (file: File, appName: string, realPath: string) => {
     const realPathIpad = file.ios.pathIpad
       ? "./images/" + file.ios.pathIpad.replace("./", "")
       : undefined
-    await convertToPngOrJpgIos(
+    convertToPngOrJpgIos(
       realPath,
       file.ios.height,
       file.ios.width,
@@ -50,7 +50,7 @@ const generateIos = async (file: File, appName: string, realPath: string) => {
       realPathIpad
     )
   } else if (file.ios.type === IosFileType.Pdf) {
-    await convertSvgToPdf(realPath, iosOutput, file.source["uri"])
+    convertSvgToPdf(realPath, iosOutput, file.source["uri"])
   }
 }
 
