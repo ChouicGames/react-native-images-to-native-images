@@ -1,11 +1,19 @@
 import React from "react"
-import { Image, Platform } from "react-native"
+import { Image, ImageStyle, Platform, StyleProp, StyleSheet } from "react-native"
 import { AndroidFileType, NativeImageProps, File, IosFileType } from "./types"
 import VectorDrawable from "@klarna/react-native-vector-drawable"
 
 interface Props {
   file: File
 }
+
+/**
+ * RN's <Image> honours `style.tintColor`, but RNVectorDrawable only reads a top-level
+ * `tintColor` prop. Without this, `style={{ tintColor }}` silently does nothing on Android
+ * vector assets and the glyph keeps the colour baked into the source SVG.
+ */
+const tintColorFromStyle = (style: unknown) =>
+  StyleSheet.flatten(style as StyleProp<ImageStyle>)?.tintColor
 
 const getWidthAndHeight = (fileInfos: File) => {
   if (
@@ -24,7 +32,15 @@ export const NativeImage: React.FC<Props & NativeImageProps> = ({ file, ...rest 
   const fileInfos: File = file
 
   if (Platform.OS === "android" && fileInfos.android.type === AndroidFileType.Vector) {
-    return <VectorDrawable resourceName={fileInfos.source["uri"] as string} {...rest} />
+    const { style, tintColor, ...others } = rest as Record<string, unknown>
+    return (
+      <VectorDrawable
+        resourceName={fileInfos.source["uri"] as string}
+        tintColor={(tintColor ?? tintColorFromStyle(style)) as any}
+        style={style as any}
+        {...others}
+      />
+    )
   }
 
   const { width, height } = getWidthAndHeight(fileInfos)
